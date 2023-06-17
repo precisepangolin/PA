@@ -31,6 +31,15 @@ namespace Assessment
             return queues;
         }
 
+        public static List<Manager> GenerateManagers() {
+            List<Manager> managers = new List<Manager>();
+            Manager manager1 = new Manager(1, "Rick");
+            Manager manager2 = new Manager(2, "Josh");
+            managers.Add(manager1);
+            managers.Add(manager2);
+            return managers;
+        }
+
         public static void PopulateCallQueue(CallQueue queue, int numberOfCallsToGenerate)
         {
             for (int i = 0; i < numberOfCallsToGenerate; i++)
@@ -39,5 +48,13 @@ namespace Assessment
                 queue.AddCallToQueue(newCall);
             }
         } 
+
+        public static CallQueue QueueWithMostCalls(List<CallQueue> queues)
+        {
+
+            queues.Sort();
+            return queues[1];
+
+        }
     }
 }

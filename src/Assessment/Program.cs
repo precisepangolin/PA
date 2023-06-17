@@ -53,14 +53,14 @@ namespace Assessment
 
             Console.WriteLine("Queue with most calls waiting:");
 
-            queues.Sort();
-            if (queues[1].HighPriority)
+            CallQueue longQueue = QueueManager.QueueWithMostCalls(queues);
+            if (longQueue.HighPriority)
             {
-                Console.WriteLine($"High priority queue with {queues[1].calls.Count} calls");
+                Console.WriteLine($"High priority queue with {longQueue.calls.Count} calls");
             }
             else
             {
-                Console.WriteLine($"Regular queue with {queues[1].calls.Count} calls");
+                Console.WriteLine($"Regular queue with {longQueue.calls.Count} calls");
             }
         }
 
